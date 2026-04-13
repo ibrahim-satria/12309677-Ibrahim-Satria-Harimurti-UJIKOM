@@ -11,6 +11,11 @@ class Lending extends Model
 
     protected $fillable = ['item_id', 'user_id', 'total_lent', 'returned', 'return_date', 'lend_date'];
 
+    protected $casts = [
+        'lend_date' => 'datetime',
+        'return_date' => 'datetime',
+    ];
+
     public function item()
     {
         return $this->belongsTo(Item::class);

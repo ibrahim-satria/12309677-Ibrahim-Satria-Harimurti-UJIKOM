@@ -52,11 +52,11 @@
                                         <td>{{ $lending->item->name }}</td>
                                         <td>{{ $lending->total_lent }}</td>
                                         <td>
-                                            {{ $lending->lend_date ? \Carbon\Carbon::parse($lending->lend_date)->format('d M Y H:i') : '-' }}
+                                            {{ $lending->lend_date ? $lending->lend_date->format('d M Y H:i') : '-' }}
                                         </td>
 
                                         <td>
-                                            {{ $lending->return_date ? \Carbon\Carbon::parse($lending->return_date)->format('d M Y') : '-' }}
+                                            {{ $lending->return_date ? $lending->return_date->format('d M Y') : '-' }}
                                         </td>
                                         <td>
                                             @if ($lending->returned)

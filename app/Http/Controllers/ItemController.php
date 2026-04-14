@@ -23,6 +23,10 @@ class ItemController extends Controller
             return $item;
         });
 
+        if (auth()->user()->role === 'staff') {
+            return view('staff.items.index', compact('items'));
+        }
+
         return view('admin.items.index', compact('items'));
     }
 

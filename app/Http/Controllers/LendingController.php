@@ -34,7 +34,7 @@ class LendingController extends Controller
             'total_lent' => 'required|integer|min:1',
         ]);
 
-        $validate['lend_date'] = now(); // ✅ BENAR
+        $validate['lend_date'] = now();
 
         Lending::create($validate);
 
@@ -68,6 +68,6 @@ class LendingController extends Controller
 
     public function exportExcel()
     {
-        return Excel::download(new LendingExport, 'lendings.xlsx');
+        return Excel::download(new LendingExport, 'lendings_' . now()->format('Y-m-d_H-i-s') . '.xlsx');
     }
 }

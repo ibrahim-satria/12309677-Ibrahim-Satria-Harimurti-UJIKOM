@@ -89,6 +89,9 @@
          Route::get('staff/items', [ItemController::class, 'index'])
         ->name('staff.items.index');
 
+            Route::get('staff/items-export-xlsx', [ItemController::class, 'exportExcel'])
+                ->name('staff.items.export_excel');
+
             Route::resource('staff/lendings', LendingController::class)->names([
                 'index' => 'staff.lendings.index',
                 'create' => 'staff.lendings.create',

@@ -55,7 +55,8 @@ class LendingExport implements FromCollection, WithHeadings, WithMapping, Should
                 $sheet->insertNewRowBefore(1, 2);
                 
                 // Set the title
-                $sheet->setCellValue('A1', 'Judul Peminjaman/Pengembalian barang');
+                $currentDate = now()->format('d M Y H:i:s');
+                $sheet->setCellValue('A1', "Judul Peminjaman/Pengembalian barang (Dibuat pada: $currentDate)");
                 
                 // Merge cells for the title
                 $sheet->mergeCells('A1:H1');

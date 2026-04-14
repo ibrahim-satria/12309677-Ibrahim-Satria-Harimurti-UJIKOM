@@ -63,7 +63,7 @@ class ItemExport implements FromCollection, WithHeadings, WithMapping, ShouldAut
 
                 // Set the title with current time
                 $currentDate = now()->format('d M Y H:i:s');
-                $sheet->setCellValue('A1', "Data Inventaris Barang (Dibuat pada: $currentDate)");
+                $sheet->setCellValue('A1', "Data Pengembalian dan Peminjaman barang (Dibuat pada: $currentDate)");
 
                 // Merge cells for the title
                 $sheet->mergeCells('A1:I1');
